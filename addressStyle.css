@@ -1,0 +1,151 @@
+html,
+body {}
+
+.body_dialog {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 71, 71, 0.5);
+  z-index: 1001;
+}
+
+.dialog {
+  width: 590px;
+  height: 620px;
+  background-color: #ffffff;
+  top: 40%;
+  left: 50%;
+  margin-left: -295px;
+  margin-top: -250px;
+  position: fixed;
+  z-index: 1500;
+  display: none;
+  border-radius: 25px;
+}
+
+.title {
+  height: 55px;
+  background-color: #f5694b;
+  border-radius: 25px 25px 0 0;
+}
+
+.add {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 55px;
+  margin-left: 30px;
+  margin-top: 0px;
+}
+
+.content {
+  padding: 0px 30px 0;
+  height: 83px;
+}
+
+
+.city_list {
+  list-style: none;
+  margin: 16px -30px 0px 0px;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  color: #61687c;
+}
+
+.content a:hover {
+  color: #f5694b;
+}
+
+/*改变超链接的字体颜色 */
+.content li:hover a {
+  color: #ffffff;
+}
+
+
+.city_item {
+  border: 1px #f5694b solid;
+  padding: 5px;
+  font-size: 14px;
+  height: 15px;
+  line-height: 15px;
+  width: 60px;
+  text-align: center;
+  margin: 0px 32px 17px 0px;
+  display: inline-block;
+  border-radius: 5px;
+
+}
+
+.city_list_letter {
+  position: relative;
+  height: 363px;
+  overflow: hidden;
+  clear: both;
+  margin: 0 auto;
+  padding-left: 90px;
+  border: 1px solid #e8e8e8;
+}
+
+.city_list_letter ul {
+  position: absolute;
+  width: 90px;
+  height: 363px;
+  font-size: 16px;
+  color: #666;
+  left: 0;
+  background-color: #eee;
+  padding: 0;
+  margin: 0px;
+}
+
+.city_list_letter li {
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  text-align: center;
+  text-indent: -3px;
+  cursor: pointer;
+  border-left: 4px solid #eee;
+  list-style: none;
+}
+
+
+.city_name {
+  position: absolute;
+  width: 440px;
+  height: 315px;
+  top: 0;
+  left: 88px;
+  overflow-y: auto
+}
+
+.city_name span {
+  float: left;
+  line-height: 38px;
+  min-width: 21%;
+  *min-width: 14%;
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 2%
+}
+
+.city_name span a {
+  font-size: 14px;
+  color: #666
+}
+
+.city_name span a:hover {
+  color: #f5694b
+}
+
+.city_list_letter li.on {
+  color: #f5694b;
+  background-color: #fff;
+  border-left-color: #f5694b;
+}

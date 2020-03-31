@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://static.jjoobb.cn/adress/addressStyle.css">
+  <!-- <link rel="stylesheet" href="./addressStyle.css"> -->
+  <link rel="stylesheet" href="https://static.jjoobb.cn/adress/iconfont.css">
+
+  <script src="http://static.jjoobb.cn/adress/jquery-1.8.3.min.js"></script>
+
+</head>
+<style>
+
+</style>
+
+
+
+<body>
+  <div style="background-color: rgb(249, 255, 253);width: 100%;height: 900px;">
+    <a id="pick_me" href="javascript:void(0)">请点这里</a>
+  </div>
+
+  <div id="body_dialog" class="body_dialog">
+  </div>
+  <div id="dialog" class="dialog">
+    <div class="title">
+      <p class="add">
+        城市选择
+        <span style="font-size: 14px;">切换城市分站，寻找当地心仪工作</span>
+        <a href="javascript:void(0)"
+          onclick="document.getElementById('dialog').style.display='none';document.getElementById('body_dialog').style.display='none'">
+          <span id="quxiao" class="iconfont icon-quxiao"
+            style="float: right; margin-right: 10px;color: #ffffff;"></span>
+        </a>
+      </p>
+    </div>
+    <div class="content">
+      <div style="font-size: 14px;padding-top: 10px;">
+        <p style="font-size: 14px;color: #414a60;margin: 0px;">
+          热门城市：
+        </p>
+      </div>
+      <ul class="city_list" style="padding-left: 8px;margin-bottom: 0px;">
+        <li class="city_item" id="zz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="https://www.jjoobb.cn/">郑州站</a>
+        </li>
+        <li class="city_item" id="bj" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://beijing.jjoobb.cn/index.aspx">北京站</a>
+        </li>
+        <li class="city_item" id="sh" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shanghai.jjoobb.cn/index.aspx">上海站</a>
+        </li>
+        <li class="city_item" id="gz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://guangzhou.jjoobb.cn/index.aspx">广州站</a>
+        </li>
+        <li class="city_item" id="sz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shenzhen.jjoobb.cn/index.aspx">深圳站</a>
+        </li>
+        <li class="city_item" id="hz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://hangzhou.jjoobb.cn/index.aspx">杭州站</a>
+        </li>
+        <li class="city_item" id="xa" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://xian.jjoobb.cn/index.aspx">西安站</a>
+        </li>
+        <li class="city_item" id="wh" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://wuhan.jjoobb.cn/index.aspx">武汉站</a>
+        </li>
+        <li class="city_item" id="tj" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://tianjin.jjoobb.cn/index.aspx">天津站</a>
+        </li>
+        <li class="city_item" id="cq" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://chongqing.jjoobb.cn/index.aspx">重庆站</a>
+        </li>
+      </ul>
+
+
+      <!-- 省会城市 -->
+      <!-- <ul class="city_list" style="padding-left: 8px;margin-bottom: 0px;">
+        <li class="city_item" id="bj" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://beijing.jjoobb.cn/index.aspx">北京站</a>
+        </li>
+        <li class="city_item" id="sh" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shanghai.jjoobb.cn/index.aspx">上海站</a>
+        </li>
+        <li class="city_item" id="gz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://guangzhou.jjoobb.cn/index.aspx">广州站</a>
+        </li>
+        <li class="city_item" id="sz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shenzhen.jjoobb.cn/index.aspx">深圳站</a>
+        </li>
+        <li class="city_item" id="hz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://hangzhou.jjoobb.cn/index.aspx">杭州站</a>
+        </li>
+        <li class="city_item" id="xa" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://xian.jjoobb.cn/index.aspx">西安站</a>
+        </li>
+        <li class="city_item" id="wh" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://wuhan.jjoobb.cn/index.aspx">武汉站</a>
+        </li>
+        <li class="city_item" id="tj" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://tianjin.jjoobb.cn/index.aspx">天津站</a>
+        </li>
+        <li class="city_item" id="cq" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://chongqing.jjoobb.cn/index.aspx">重庆站</a>
+        </li>
+        <li class="city_item" id="sjz" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shijiazhuang.jjoobb.cn/index.aspx">石家庄站</a>
+        </li>
+        <li class="city_item" id="shenyang" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://shenyang.jjoobb.cn/index.aspx">沈阳站</a>
+        </li>
+        <li class="city_item" id="changchun" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://changchun.jjoobb.cn/index.aspx">长春站</a>
+        </li>
+        <li class="city_item" id="haerbin" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://haerbin.jjoobb.cn/index.aspx">哈尔滨站</a>
+        </li>
+        <li class="city_item" id="nj" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://nanjing.jjoobb.cn/index.aspx">南京站</a>
+        </li>
+        <li class="city_item" id="fuzhou" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://fuzhou.jjoobb.cn/index.aspx">福州站</a>
+        </li>
+        <li class="city_item" id="jn" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://jinan.jjoobb.cn/index.aspx">济南站</a>
+        </li>
+        <li class="city_item" id="ty" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://taiyuan.jjoobb.cn/index.aspx">太原站</a>
+        </li>
+        <li class="city_item" id="hf" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://hefei.jjoobb.cn/index.aspx">合肥站</a>
+        </li>
+        <li class="city_item" id="cs" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://changsha.jjoobb.cn/index.aspx">长沙站</a>
+        </li>
+        <li class="city_item" id="nanchang" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://nanchang.jjoobb.cn/index.aspx">南昌站</a>
+        </li>
+        <li class="city_item" id="chengdu" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://chengdu.jjoobb.cn/index.aspx">成都站</a>
+        </li>
+        <li class="city_item" id="nanning" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://nanning.jjoobb.cn/index.aspx">南宁站</a>
+        </li>
+        <li class="city_item" id="haikou" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://haikou.jjoobb.cn/index.aspx">海口站</a>
+        </li>
+        <li class="city_item" id="guiyang" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://guiyang.jjoobb.cn/index.aspx">贵阳站</a>
+        </li>
+        <li class="city_item" id="kunming" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://kunming.jjoobb.cn/index.aspx">昆明站</a>
+        </li>
+        <li class="city_item" id="lasa" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://lasa.jjoobb.cn/index.aspx">拉萨站</a>
+        </li>
+        <li class="city_item" id="lanzhou" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://lanzhou.jjoobb.cn/index.aspx">兰州站</a>
+        </li>
+        <li class="city_item" id="xining" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://xining.jjoobb.cn/index.aspx">西宁站</a>
+        </li>
+        <li class="city_item" id="yinchuan" onmouseover="over(id)" onmouseout="out(id)">
+          <a href="http://yinchuan.jjoobb.cn/index.aspx">银川站</a>
+        </li>
+        <li class="city_item" id="wulumuqi" onmouseover="over(id)" onmouseout="out(id)" style="font-size: 12px;">
+          <a href="http://wulumuqi.jjoobb.cn/index.aspx">乌鲁木齐站</a>
+        </li>
+      </ul> -->
+
+      <div class="city_list_letter">
+        <!-- 字母选择城市 -->
+        <ul id="letter_list">
+          <li class="on" onclick="cityChannelChange('abc', this)">A B C</li>
+          <li onclick="cityChannelChange('def', this)">D E F</li>
+          <li onclick="cityChannelChange('gh', this)">G H</li>
+          <li onclick="cityChannelChange('jkl', this)">J K L</li>
+          <li onclick="cityChannelChange('mnp', this)">M N P</li>
+          <li onclick="cityChannelChange('qrs', this)">Q R S</li>
+          <li onclick="cityChannelChange('twx', this)">T W X</li>
+          <li onclick="cityChannelChange('yz', this)">Y Z</li>
+        </ul>
+        <div class="city_name" id="city_name">
+          <div class="e" name="city_channel_abc">
+            <span><a href="http://anshan.jjoobb.cn/index.aspx">鞍山</a></span>
+            <span><a href="http://anqing.jjoobb.cn/index.aspx">安庆</a></span>
+            <span><a href="http://anyang.jjoobb.cn/index.aspx">安阳</a></span>
+            <span><a href="http://beijing.jjoobb.cn/index.aspx">北京</a></span>
+            <span><a href="http://baotou.jjoobb.cn/index.aspx">包头</a></span>
+            <span><a href="http://baoding.jjoobb.cn/index.aspx">保定</a></span>
+            <span><a href="http://bengbu.jjoobb.cn/index.aspx">蚌埠</a></span>
+            <span><a href="http://baoji.jjoobb.cn/index.aspx">宝鸡</a></span>
+            <span><a href="http://binzhou.jjoobb.cn/index.aspx">滨州</a></span>
+            <span><a href="http://changchun.jjoobb.cn/index.aspx">长春</a></span>
+            <span><a href="http://changsha.jjoobb.cn/index.aspx">长沙</a></span>
+            <span><a href="http://chengdu.jjoobb.cn/index.aspx">成都</a></span>
+            <span><a href="http://chongqing.jjoobb.cn/index.aspx">重庆</a></span>
+            <span><a href="http://changzhou.jjoobb.cn/index.aspx">常州</a></span>
+            <span><a href="http://changde.jjoobb.cn/index.aspx">常德</a></span>
+            <span><a href="http://changshu.jjoobb.cn/index.aspx">常熟</a></span>
+            <span><a href="http://cangzhou.jjoobb.cn/index.aspx">沧州</a></span>
+            <span><a href="http://chaozhou.jjoobb.cn/index.aspx">潮州</a></span>
+            <span><a href="http://chenzhou.jjoobb.cn/index.aspx">郴州</a></span>
+            <span><a href="http://chifeng.jjoobb.cn/index.aspx">赤峰</a></span>
+            <span><a href="http://chuzhou.jjoobb.cn/index.aspx">滁州</a></span>
+            <span><a href="http://changzhi.jjoobb.cn/index.aspx">长治</a></span>
+          </div>
+          <div class="e" name="city_channel_def" style="display:none">
+            <span><a href="http://dalian.jjoobb.cn/index.aspx">大连</a></span>
+            <span><a href="http://dongguan.jjoobb.cn/index.aspx">东莞</a></span>
+            <span><a href="http://dandong.jjoobb.cn/index.aspx">丹东</a></span>
+            <span><a href="http://daqing.jjoobb.cn/index.aspx">大庆</a></span>
+            <span><a href="http://dazhou.jjoobb.cn/index.aspx">达州</a></span>
+            <span><a href="http://datong.jjoobb.cn/index.aspx">大同</a></span>
+            <span><a href="http://deyang.jjoobb.cn/index.aspx">德阳</a></span>
+            <span><a href="http://dezhou.jjoobb.cn/index.aspx">德州</a></span>
+            <span><a href="http://dongying.jjoobb.cn/index.aspx">东营</a></span>
+            <span><a href="http://eerduosi.jjoobb.cn/index.aspx">鄂尔多斯</a></span>
+            <span><a href="http://ezhou.jjoobb.cn/index.aspx">鄂州</a></span>
+            <span><a href="http://fuzhou.jjoobb.cn/index.aspx">福州</a></span>
+            <span><a href="http://foshan.jjoobb.cn/index.aspx">佛山</a></span>
+            <span><a href="http://fushun.jjoobb.cn/index.aspx">抚顺</a></span>
+            <span><a href="http://0794.jjoobb.cn/index.aspx">抚州</a></span>
+            <span><a href="http://fuyang.jjoobb.cn/index.aspx">阜阳</a></span>
+          </div>
+          <div class="e" name="city_channel_gh" style="display:none">
+            <span><a href="http://guangzhou.jjoobb.cn/index.aspx">广州</a></span>
+            <span><a href="http://guiyang.jjoobb.cn/index.aspx">贵阳</a></span>
+            <span><a href="http://ganzhou.jjoobb.cn/index.aspx">赣州</a></span>
+            <span><a href="http://guangan.jjoobb.cn/index.aspx">广安</a></span>
+            <span><a href="http://guangyuan.jjoobb.cn/index.aspx">广元</a></span>
+            <span><a href="http://guigang.jjoobb.cn/index.aspx">贵港</a></span>
+            <span><a href="http://guilin.jjoobb.cn/index.aspx">桂林</a></span>
+            <span><a href="http://haerbin.jjoobb.cn/index.aspx">哈尔滨</a></span>
+            <span><a href="http://hangzhou.jjoobb.cn/index.aspx">杭州</a></span>
+            <span><a href="http://hefei.jjoobb.cn/index.aspx">合肥</a></span>
+            <span><a href="http://haokou.jjoobb.cn/index.aspx">海口</a></span>
+            <span><a href="http://huhehaote.jjoobb.cn/index.aspx">呼和浩特</a></span>
+            <span><a href="http://huizhou.jjoobb.cn/index.aspx">惠州</a></span>
+            <span><a href="http://hengyang.jjoobb.cn/index.aspx">衡阳</a></span>
+            <span><a href="http://huaian.jjoobb.cn/index.aspx">淮安</a></span>
+            <span><a href="http://huzhou.jjoobb.cn/index.aspx">湖州</a></span>
+            <span><a href="http://handan.jjoobb.cn/index.aspx">邯郸</a></span>
+            <span><a href="http://hanzhong.jjoobb.cn/index.aspx">汉中</a></span>
+            <span><a href="http://heyuan.jjoobb.cn/index.aspx">河源</a></span>
+            <span><a href="http://heze.jjoobb.cn/index.aspx">菏泽</a></span>
+            <span><a href="http://hengshui.jjoobb.cn/index.aspx">衡水</a></span>
+            <span><a href="http://huaihua.jjoobb.cn/index.aspx">怀化</a></span>
+            <span><a href="http://huaibei.jjoobb.cn/index.aspx">淮北</a></span>
+            <span><a href="http://huainan.jjoobb.cn/index.aspx">淮南</a></span>
+            <span><a href="http://huanggang.jjoobb.cn/index.aspx">黄冈</a></span>
+            <span><a href="http://huangshi.jjoobb.cn/index.aspx">黄石</a></span>
+          </div>
+          <div class="e" name="city_channel_jkl" style="display:none">
+            <span><a href="http://jinan.jjoobb.cn/index.aspx">济南</a></span>
+            <span><a href="http://jiaxing.jjoobb.cn/index.aspx">嘉兴</a></span>
+            <span><a href="http://jinhua.jjoobb.cn/index.aspx">金华</a></span>
+            <span><a href="http://jilin.jjoobb.cn/index.aspx">吉林</a></span>
+            <span><a href="http://jiangmen.jjoobb.cn/index.aspx">江门</a></span>
+            <span><a href="http://jingzhou.jjoobb.cn/index.aspx">荆州</a></span>
+            <span><a href="http://jining.jjoobb.cn/index.aspx">济宁</a></span>
+            <span><a href="http://jiujinag.jjoobb.cn/index.aspx">九江</a></span>
+            <span><a href="http://jian.jjoobb.cn/index.aspx">吉安</a></span>
+            <span><a href="http://jiaozuo.jjoobb.cn/index.aspx">焦作</a></span>
+            <span><a href="http://jieyang.jjoobb.cn/index.aspx">揭阳</a></span>
+            <span><a href="http://jinzhou.jjoobb.cn/index.aspx">锦州</a></span>
+            <span><a href="http://jinzhong.jjoobb.cn/index.aspx">晋中</a></span>
+            <span><a href="http://jingmen.jjoobb.cn/index.aspx">荆门</a></span>
+            <span><a href="http://kunming.jjoobb.cn/index.aspx">昆明</a></span>
+            <span><a href="http://kunshan.jjoobb.cn/index.aspx">昆山</a></span>
+            <span><a href="http://http://www.0378job.com/">开封</a></span>
+            <span><a href="http://lanzhou.jjoobb.cn/index.aspx">兰州</a></span>
+            <span><a href="http://langfang.jjoobb.cn/index.aspx">廊坊</a></span>
+            <span><a href="http://linyi.jjoobb.cn/index.aspx">临沂</a></span>
+            <span><a href="http://luoyang.jjoobb.cn/index.aspx">洛阳</a></span>
+            <span><a href="http://lianyungang.jjoobb.cn/index.aspx">连云港</a></span>
+            <span><a href="http://liuzhou.jjoobb.cn/index.aspx">柳州</a></span>
+            <span><a href="http://leshan.jjoobb.cn/index.aspx">乐山</a></span>
+            <span><a href="http://liaocheng.jjoobb.cn/index.aspx">聊城</a></span>
+            <span><a href="http://linfen.jjoobb.cn/index.aspx">临汾</a></span>
+            <span><a href="http://luan.jjoobb.cn/index.aspx">六安</a></span>
+            <span><a href="http://loudi.jjoobb.cn/index.aspx">娄底</a></span>
+            <span><a href="http://luzhou.jjoobb.cn/index.aspx">泸州</a></span>
+            <span><a href="http://0395.jjoobb.cn/index.aspx">漯河</a></span>
+          </div>
+          <div class="e" name="city_channel_mnp" style="display:none">
+            <span><a href="http://mianyang.jjoobb.cn/index.aspx">绵阳</a></span>
+            <span><a href="http://maanshan.jjoobb.cn/index.aspx">马鞍山</a></span>
+            <span><a href="http://maoming.jjoobb.cn/index.aspx">茂名</a></span>
+            <span><a href="http://meishan.jjoobb.cn/index.aspx">眉山</a></span>
+            <span><a href="http://meizhou.jjoobb.cn/index.aspx">梅州</a></span>
+            <span><a href="http://nanjing.jjoobb.cn/index.aspx">南京</a></span>
+            <span><a href="http://ningbo.jjoobb.cn/index.aspx">宁波</a></span>
+            <span><a href="http://nanchang.jjoobb.cn/index.aspx">南昌</a></span>
+            <span><a href="http://nantong.jjoobb.cn/index.aspx">南通</a></span>
+            <span><a href="http://nanning.jjoobb.cn/index.aspx">南宁</a></span>
+            <span><a href="http://nanchong.jjoobb.cn/index.aspx">南充</a></span>
+            <span><a href="http://nanyang.jjoobb.cn/index.aspx">南阳</a></span>
+            <span><a href="http://neijiang.jjoobb.cn/index.aspx">内江</a></span>
+            <span><a href="http://ningde.jjoobb.cn/index.aspx">宁德</a></span>
+            <span><a href="http://0375.jjoobb.cn/index.aspx">平顶山</a></span>
+            <span><a href="http://putian.jjoobb.cn/index.aspx">莆田</a></span>
+            <span><a href="http://puyang.jjoobb.cn/index.aspx">濮阳</a></span>
+          </div>
+          <div class="e" name="city_channel_qrs" style="display:none">
+            <span><a href="http://qingdao.jjoobb.cn/index.aspx">青岛</a></span>
+            <span><a href="http://quanzhou.jjoobb.cn/index.aspx">泉州</a></span>
+            <span><a href="http://qinhuangdao.jjoobb.cn/index.aspx">秦皇岛</a></span>
+            <span><a href="http://qingyuan.jjoobb.cn/index.aspx">清远</a></span>
+            <span><a href="http://qiqihaer.jjoobb.cn/index.aspx">齐齐哈尔</a></span>
+            <span><a href="http://quzhou.jjoobb.cn/index.aspx">衢州</a></span>
+            <span><a href="http://qujing.jjoobb.cn/index.aspx">曲靖</a></span>
+            <span><a href="http://rizhao.jjoobb.cn/index.aspx">日照</a></span>
+            <span><a href="http://shanghai.jjoobb.cn/index.aspx">上海</a></span>
+            <span><a href="http://shenzhen.jjoobb.cn/index.aspx">深圳</a></span>
+            <span><a href="http://shenyang.jjoobb.cn/index.aspx">沈阳</a></span>
+            <span><a href="http://shijiazhuang.jjoobb.cn/index.aspx">石家庄</a></span>
+            <span><a href="http://suzhou.jjoobb.cn/index.aspx">苏州</a></span>
+            <span><a href="http://sanya.jjoobb.cn/index.aspx">三亚</a></span>
+            <span><a href="http://shaoxing.jjoobb.cn/index.aspx">绍兴</a></span>
+            <span><a href="http://shantou.jjoobb.cn/index.aspx">汕头</a></span>
+            <span><a href="http://shanwei.jjoobb.cn/index.aspx">汕尾</a></span>
+            <span><a href="http://0370.jjoobb.cn/index.aspx">商丘</a></span>
+            <span><a href="http://shangrao.jjoobb.cn/index.aspx">上饶</a></span>
+            <span><a href="http://shaoguan.jjoobb.cn/index.aspx">韶关</a></span>
+            <span><a href="http://shaoyang.jjoobb.cn/index.aspx">邵阳</a></span>
+            <span><a href="http://shiyan.jjoobb.cn/index.aspx">十堰</a></span>
+            <span><a href="http://suizhou.jjoobb.cn/index.aspx">随州</a></span>
+            <span><a href="http://suining.jjoobb.cn/index.aspx">遂宁</a></span>
+            <span><a href="http://suqian.jjoobb.cn/index.aspx">宿迁</a></span>
+            <span><a href="http://0557.jjoobb.cn/index.aspx">宿州</a></span>
+          </div>
+          <div class="e" name="city_channel_twx" style="display:none">
+            <span><a href="http://tianjin.jjoobb.cn/index.aspx">天津</a></span>
+            <span><a href="http://taiyuan.jjoobb.cn/index.aspx">太原</a></span>
+            <span><a href="http://taizhou.jjoobb.cn/index.aspx">台州</a></span>
+            <span><a href="http://tangshan.jjoobb.cn/index.aspx">唐山</a></span>
+            <span><a href="http://0523.jjoobb.cn/index.aspx">泰州</a></span>
+            <span><a href="http://tieling.jjoobb.cn/index.aspx">铁岭</a></span>
+            <span><a href="http://taian.jjoobb.cn/index.aspx">泰安</a></span>
+            <span><a href="http://wuhan.jjoobb.cn/index.aspx">武汉</a></span>
+            <span><a href="http://wuxi.jjoobb.cn/index.aspx">无锡</a></span>
+            <span><a href="http://wenzhou.jjoobb.cn/index.aspx">温州</a></span>
+            <span><a href="http://wulumuqi.jjoobb.cn/index.aspx">乌鲁木齐</a></span>
+            <span><a href="http://wuhu.jjoobb.cn/index.aspx">芜湖</a></span>
+            <span><a href="http://weifang.jjoobb.cn/index.aspx">潍坊</a></span>
+            <span><a href="http://weihai.jjoobb.cn/index.aspx">威海</a></span>
+            <span><a href="http://weinan.jjoobb.cn/index.aspx">渭南</a></span>
+            <span><a href="http://xian.jjoobb.cn/index.aspx">西安</a></span>
+            <span><a href="http://xiamen.jjoobb.cn/index.aspx">厦门</a></span>
+            <span><a href="http://xuzhou.jjoobb.cn/index.aspx">徐州</a></span>
+            <span><a href="http://xiangyang.jjoobb.cn/index.aspx">襄阳</a></span>
+            <span><a href="http://xiangtan.jjoobb.cn/index.aspx">湘潭</a></span>
+            <span><a href="http://xianyang.jjoobb.cn/index.aspx">咸阳</a></span>
+            <span><a href="http://xining.jjoobb.cn/index.aspx">西宁</a></span>
+            <span><a href="http://xianning.jjoobb.cn/index.aspx">咸宁</a></span>
+            <span><a href="http://xiaogan.jjoobb.cn/index.aspx">孝感</a></span>
+            <span><a href="http://0373.jjoobb.cn/index.aspx">新乡</a></span>
+            <span><a href="http://xy.jjoobb.cn/index.aspx">信阳</a></span>
+            <span><a href="http://xingtai.jjoobb.cn/index.aspx">邢台</a></span>
+            <span><a href="http://0374.jjoobb.cn/index.aspx">许昌</a></span>
+            <span><a href="http://xuancheng.jjoobb.cn/index.aspx">宣城</a></span>
+          </div>
+          <div class="e" name="city_channel_yz" style="display:none">
+            <span><a href="http://yantai.jjoobb.cn/index.aspx">烟台</a></span>
+            <span><a href="http://yangzhou.jjoobb.cn/index.aspx">扬州</a></span>
+            <span><a href="http://yichang.jjoobb.cn/index.aspx">宜昌</a></span>
+            <span><a href="http://yancheng.jjoobb.cn/index.aspx">盐城</a></span>
+            <span><a href="http://yiwu.jjoobb.cn/index.aspx">义乌</a></span>
+            <span><a href="http://yingkou.jjoobb.cn/index.aspx">营口</a></span>
+            <span><a href="http://yinchuan.jjoobb.cn/index.aspx">银川</a></span>
+            <span><a href="http://yangjiang.jjoobb.cn/index.aspx">阳江</a></span>
+            <span><a href="http://yibin.jjoobb.cn/index.aspx">宜宾</a></span>
+            <span><a href="http://yichun.jjoobb.cn/index.aspx">宜春</a></span>
+            <span><a href="http://yiyang.jjoobb.cn/index.aspx">益阳</a></span>
+            <span><a href="http://yongzhou.jjoobb.cn/index.aspx">永州</a></span>
+            <span><a href="http://yulin.jjoobb.cn/index.aspx">玉林</a></span>
+            <span><a href="http://yueyang.jjoobb.cn/index.aspx">岳阳</a></span>
+            <span><a href="http://yuncheng.jjoobb.cn/index.aspx">运城</a></span>
+            <span><a href="http://zhangzhou.jjoobb.cn/index.aspx">漳州</a></span>
+            <span><a href="http://www.jjoobb.cn">郑州</a></span>
+            <span><a href="http://zhongshan.jjoobb.cn/index.aspx">中山</a></span>
+            <span><a href="http://zhuhai.jjoobb.cn/index.aspx">珠海</a></span>
+            <span><a href="http://zhenjiang.jjoobb.cn/index.aspx">镇江</a></span>
+            <span><a href="http://zhuzhou.jjoobb.cn/index.aspx">株洲</a></span>
+            <span><a href="http://zhanjiang.jjoobb.cn/index.aspx">湛江</a></span>
+            <span><a href="http://zhaoqing.jjoobb.cn/index.aspx">肇庆</a></span>
+            <span><a href="http://zhangjiagang.jjoobb.cn/index.aspx">张家港</a></span>
+            <span><a href="http://zibo.jjoobb.cn/index.aspx">淄博</a></span>
+            <span><a href="http://zaozhuang.jjoobb.cn/index.aspx">枣庄</a></span>
+            <span><a href="http://zhangjiakou.jjoobb.cn/index.aspx">张家口</a></span>
+            <span><a href="http://0394.jjoobb.cn/index.aspx">周口</a></span>
+            <span><a href="http://0396.jjoobb.cn/index.aspx">驻马店</a></span>
+            <span><a href="http://zunyi.jjoobb.cn/index.aspx">遵义</a></span>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- 底部提醒 -->
+      <p style="font-size: 12px;color: #414a60;  margin: 15px 0px 10px 10px;">
+        其他分站开通中，敬请期待~
+      </p>
+      <div style="height: 2px;background-color: #f5694b;margin-top: 0px;"></div>
+    </div>
+
+  </div>
+
+  <script src="./address.js"></script>
+
+</body>
+
+</html>
